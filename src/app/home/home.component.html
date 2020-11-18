@@ -1,0 +1,16 @@
+<div class="col text-center">
+	Digite o nick do usuário desejado e veja se o mesmo está jogando no momento!
+
+	<form class="mx-auto" (ngSubmit)="$event.preventDefault()">
+		<div class="flex items-center border-b border-teal-500 py-2">
+			<input id="campoBuscar" (keydown.enter)="fazerBusca(campoBuscar.value); $event.preventDefault();" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Hynn" aria-label="Nickname" value="Hynn" #campoBuscar>
+			<button (click)="fazerBusca(campoBuscar.value)" class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+			Pesquisar
+			</button>
+		</div>
+	</form>
+
+	<div *ngIf="mensagem" [innerHTML]="mensagem" class="mt-5 border border-teal-900 bg-teal-100 p-2 rounded-sm"></div>
+	<div *ngIf="mensagem_complementar" [innerHTML]="mensagem_complementar" class="text-xs uppercase mt-5 border border-yellow-900 bg-yellow-400 p-2 rounded-sm"></div>
+
+</div>
